@@ -1,3 +1,5 @@
+require('./switch')
+
 let qs = require('qs')
 let http = require('http')
 let fs = require('fs')
@@ -38,8 +40,3 @@ setInterval(function () {
         req.end()
     })
 }, 1000 * 60 *15)
-
-
-http.createServer(function (res, req) {
-    req.end('running 2')
-}).listen('8080')
