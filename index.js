@@ -11,8 +11,8 @@ setInterval(function () {
         flag: 'r',
         encoding: 'utf8'
     }, function (err, data) {
-        data = "Temperature: 27;Humidity: 56;"
-        [Temperature, Humidity] = data.replace(/([a-z]|:|\b|\s)/gi, '').split(';')
+        // data = "Temperature: 27;Humidity: 56;"
+        let [Temperature, Humidity] = data.replace(/([a-z]|:|\b|\s)/gi, '').split(';')
         let send = qs.stringify({temperature:Temperature, humidity, Humidity})
         let options = {
             host:'104.225.237.158',
