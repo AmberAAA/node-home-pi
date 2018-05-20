@@ -15,6 +15,7 @@ let led = new gpio(17, 'out')
 //     led.writeSync(led.readSync() ^ 1)
 // })
 
+led.writeSync(1)
 setTimeout(()=>{
-    led.writeSync(led.readSync() ^ 1)
+    led.writeSync(0)
 },1000)
