@@ -1,4 +1,4 @@
-// let io = require('socket.io-client')('http://104.225.237.158:8081')
+let io = require('socket.io-client')('http://104.225.237.158:8081')
 let gpio = require('onoff').Gpio
 let led = new gpio(17, 'out')
 
@@ -11,11 +11,10 @@ let led = new gpio(17, 'out')
 //     console.log('amber')
 // })
 
-// io.on('light',function () {
-//     led.writeSync(led.readSync() ^ 1)
-// })
-
-led.writeSync(1)
-setTimeout(()=>{
+io.on('light', function () {
+  led.writeSync(1)
+  setTimeout(() => {
     led.writeSync(0)
-},1000)
+  }, 1000)
+})
+
